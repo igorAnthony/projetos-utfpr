@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1575239028 source:c:\users\igora\onedrive\documentos\programac\exercfundamentos\calculadora2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"calc.h"
+
+1575237420 source:c:\users\igora\onedrive\documentos\programac\exercfundamentos\calculadora2\calc.c
+	<stdio.h>
+	<stdlib.h>
+	"calc.h"
+
+1575235726 c:\users\igora\onedrive\documentos\programac\exercfundamentos\calculadora2\calc.h
+

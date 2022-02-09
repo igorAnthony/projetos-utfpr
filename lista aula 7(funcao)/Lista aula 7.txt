@@ -1,0 +1,315 @@
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 29/09/2019
+* Descrição do código: Exercicio 1 */
+#include <stdio.h>
+int soma(int x, int y);
+int subtracao(int x, int y);
+int multiplicacao(int x, int y);
+int divisao(int x, int y);
+int main()//Função principal
+{
+    //Definindo as variaveis
+    int val = 0, val2 = 0, resultado = 0;
+    char oper = ' ';
+    //Pede informação ao usuario
+    printf("****Calculadora****\nDigite dois numeros:");
+    //Recebe os valores para a variavel
+    scanf("%d%d", &val, &val2);
+    //Instrução para o usuario
+    printf("Qual operacao deseja fazer?\n/ divisao\n* multiplicacao\n+ soma\n- subtracao\n");
+    //Limpa o enter do teclado
+    while((c = getchar()) != '\n'&& c != EOF);
+    //Recebe o caracter para fazer a operação
+    oper = getchar();
+    //Condicional com switch para fazer as operacoes
+    switch(oper)
+    {
+    case '+':
+        printf("O resultado da soma eh: %d", resultado = soma(val, val2));//Imprime e chama a função que retorna a soma
+        break;
+    case '-':
+        printf("O resultado da subtracao eh: %d", resultado = subtracao(val, val2));//Imprime e chama a função que retorna a subtração
+        break;
+    case '*':
+        printf("O resultado da multiplicacao eh: %d", resultado = multiplicacao(val, val2));//Imprime e chama a função que retorna a multiplicacao
+        break;
+    case '/':
+        printf("O resultado da divisao eh: %d", resultado = divisao(val, val2));//Imprime e chama a função que retorna a divisao
+        break;
+    default:
+        printf("Opcao do operador invalida!!");
+        break;
+        }
+    return 0;
+}
+//Funções que fazem a operação
+int soma(int x, int y)
+{
+    return x+y;
+}
+int subtracao(int x, int y)
+{
+    return x-y;
+}
+int multiplicacao(int x, int y)
+{
+    return x*y;
+}
+int divisao(int x, int y)
+{
+    return x/y;
+}
+
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 29/09/2019
+* Descrição do código: Exercicio 2 */
+#include <stdio.h>
+//Função do tipo void sem retorno
+void calculadora(int x, int y, char oper);
+int main()//Função principal
+{
+    //Definindo as variaveis
+    int val = 0, val2 = 0, resultado = 0, c = 0;
+    char oper = ' ';
+    //Pede informação ao usuario
+    printf("****Calculadora****\nDigite dois numeros:");
+    //Recebe os valores para a variavel
+    scanf("%d%d", &val, &val2);
+    //Instrução para o usuario
+    printf("Qual operacao deseja fazer?\n/ divisao\n* multiplicacao\n+ soma\n- subtracao\n");
+    //Limpa o enter do teclado
+    while((c = getchar()) != '\n'&& c != EOF);
+    //Recebe o caracter para fazer a operação
+    oper = getchar();
+    //Chama a função sem retorno
+    calculadora(val, val2, oper);
+    return 0;
+}
+//Função void com switch para cada coisa, são passados 3 parametros, dois numeros e um do tipo char que é a operação que preciso
+void calculadora(int x, int y, char oper)
+{
+    //Condicional com switch para fazer as operacoes
+    switch(oper)
+    {
+    case '+':
+        printf("O resultado da soma eh: %d", x+y);
+        break;
+    case '-':
+        printf("O resultado da subtracao eh: %d", x-y);
+        break;
+    case '*':
+        printf("O resultado da multiplicacao eh: %d", x*y);
+        break;
+    case '/':
+        printf("O resultado da divisao eh: %d", x/y);
+        break;
+    default:
+        printf("Opcao do operador invalida!! ");
+        break;
+        }
+}
+
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 3 */
+#include <stdio.h>
+//Função encarregada da fatoração
+int fatorial(int x);
+int main()//Função principal
+{
+    //Definindo as variaveis
+    int num, fat;
+    //Pede informação para o usuario
+    printf("Digite o valor que deseja saber a fatorial: ");
+    //Recebe valores para as variaveis
+    scanf("%d", &num);
+    //Chama a função com retorno, se for maior que zero ela me retorna a fatorial, se não retorna -1
+    fat = fatorial(num);
+    printf("A fatorial de %d eh: %d", num, fat);
+    //Me mostra se o codigo funcionou corretamente
+    return 0;
+}
+int fatorial(int x)
+{
+    //Definindo as variaveis
+    int fat, i;
+    fat = x;
+    //Primeira condição, verifica se o valor é menor que zero, se for ele já retorna -1
+    if(fat > 0){
+    for(i = fat - 1; i > 0; i--){//Laço de repetição para fazer a fatorial
+        fat = fat*i;
+    }}else{
+        return -1;//Se for menor que zero, vai me retornar -1
+    }
+    //retorna o valor da fatorial
+    return fat;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 4 */
+#include <stdio.h>
+#include <math.h>
+//Função encarregada de calcular e retornar a distancia entre dois pontos
+float distancia_entre_pontos(float x1, float y1, float x2, float y2);
+int main()
+{
+    //Definindo variaveis
+    float x1, y1, x2, y2, dist;
+    //Pede para o usuario informar um ponto
+    printf("Digite um ponto na ordem x y:");
+    //Recebe os valores do usuario para as variaveis do ponto
+    scanf("%f%f", &x1, &y1);
+    //Pede para o usuario informar outro ponto
+    printf("Digite outro ponto na ordem x y:");
+     //Recebe os valores do usuario para as variaveis do ponto
+    scanf("%f%f", &x2, &y2);
+    //Chama a função
+    dist = distancia_entre_pontos(x1, y1, x2, y2);
+    printf("Distancia entre os pontos dados eh: %.3f u.c", dist);
+    //Me mostra se deu algum erro
+    return 0;
+}
+float distancia_entre_pontos(float x1, float y1, float x2, float y2)
+{
+    float dist;//variavel que recebe a distancia entre os pontos
+    dist = sqrt(pow((x2-x1), 2) + pow((y2-y1), 2));//calcula a distancia entre os dois pontos
+    return dist;//retorna a distancia entre os dois pontos
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 5 */
+#include <stdio.h>
+//Função encarregada de calcular o MDC
+void MDC(int x, int y);
+int main()
+{
+    //Definindo variaveis
+    int num, num2;
+    //Pede informação para o usuario
+    printf("Informe dois valores que deseja saber o maximo divisor comum: ");
+    //Recebe os valores para a variaveis
+    scanf("%d%d", &num, &num2);
+    //Chama a função sem retorno para calcular o MDC
+    MDC(num, num2);
+    //Me mostra se deu algum erro
+    return 0;
+}
+void MDC(int x, int y)
+{
+    //Declarando variaveis que vão ser usadas na função, uma sera o divisor e a outra que vai receber o maior valor da divisao
+    int i = 2, div_c = 0;
+    //Condição para pegar o maior divisor
+    while(i <= x && i <= y)
+    {
+        if(((x % i) == 0)&& ((y % i) == 0))
+        {
+            div_c = i;
+        }
+        i++;
+    }
+    printf("%d", div_c);
+}
+
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 31/09/2019
+* Descrição do código: Exercicio 6 */
+#include <stdio.h>
+//Função encarregada de calcular o MDC
+void MMC(int x, int y);
+int main()
+{
+    //Definindo variaveis
+    int num, num2;
+    //Pede informação para o usuario
+    printf("Informe dois valores que deseja saber o minimo multiplo comum: ");
+    //Recebe os valores para a variaveis
+    scanf("%d%d", &num, &num2);
+    //Chama a função sem retorno para calcular o MDC
+    MMC(num, num2);
+    //Me mostra se deu algum erro
+    return 0;
+}
+void MMC(int x, int y)
+{
+    //Declarando variaveis que vão ser usadas na função, uma sera o divisor e a outra que vai receber o maior valor da divisao
+    int i = 2, mult_c = 1;
+    //Condição que verifica se o valor do divisor é menor ou igual a um dos valores, se for ele continua a repetição
+    while(i <= x || i<= y)
+    {
+        //Primeira condição verifica se o divisor é comum aos dois, se for ele divide os dois
+        if(((x % i) == 0) && ((y % i) == 0))
+        {
+            x/=i;
+            y/=i;
+            mult_c *= i;
+        }
+        //Segunda condição verifica se apenas o primeiro é divisivel
+        if(((x % i) == 0) && ((y % i) != 0))
+        {
+            x/=i;
+            mult_c*=i;
+        }
+        //Terceira condição é se apenas o segundo valor for divisivel
+        if(((y % i) == 0) && ((x % i) != 0))
+        {
+            y/=i;
+            mult_c*=i;
+        }
+        //Incrimento do valor de x
+        i++;
+    }
+    //Imprime na tela o o mmc
+    printf("O mmc eh: %d", mult_c);
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 7 */
+#include <stdio.h>
+//Função encarregada de calcular a soma dos divisores de um numero exceto ele msm
+int soma_divisores(int x);
+int main()
+{
+    //Definindo variaveis
+    int num, result;
+    //Pede informação para o usuario
+    printf("Informe um valor que deseja sabe o numero de divisores exceto ele msm: ");
+    //Recebe os valores para a variaveis
+    scanf("%d", &num);
+    //Chama a função sem retorno para calcular o MDC
+    result = soma_divisores(num);
+    //Imprime a soma dos divisores
+    printf("Soma dos divisores: %d", result);
+    //Me mostra se deu algum erro
+    return 0;
+}
+//Estrutura da função
+int soma_divisores(int x)
+{
+    //Declarando as variaveis
+    int i, soma = 0;
+    //Laço de repetição para testar todos os divisores possiveis
+    for(i = 1; i < x; i++)
+    {
+        //Verifica se o valor é divisivel, se for ele entra na condição e adiciona na soma
+        if(x % i == 0)
+        {
+            soma += i;
+        }
+    }
+    //Retorna o valor da soma para o result
+    return soma;
+}
+

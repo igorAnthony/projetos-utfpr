@@ -1,0 +1,276 @@
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 1 */
+#include <stdio.h>
+int main()//Função principal
+{
+    //Definindo as variaveis
+    int num, i, fat;
+    //Pede informação para o usuario
+    printf("Digite o valor que deseja saber a fatorial: ")
+    //Recebe valores para as variaveis
+    scanf("%d", &num);
+    //Primeira condição, verifica se o valor é menor que zero, se for ele já imprime a mensagem de erro
+    if(num > 0){
+    for(i = num - 1; i > 0; i--){//Laço de repetição para fazer a fatorial
+        num = num*i;
+    }}else{
+        printf("Erro valor menor que zero");
+    }
+    //Imprime na tela o resultado da fatorial
+    printf(":%d ", num);
+    //Me mostra se o codigo funcionou corretamente
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 2 */
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    //Definindo as variaveis
+    int num1, num2, aux_primo = 0, i, j;
+    //Pedindo informação para usuario
+    printf("Digite o intervalo que deseja saber os primos: ");
+    //Recebendo os valores do usuario
+    scanf("%d %d", &num1, &num2);
+    //Limpa a tela
+    system("cls");
+    for(i = num1; i <= num2; i++)
+    {
+        for(j = 2; j <= num2; j++)
+        {
+            if((i % j) == 0){
+            aux_primo++;
+            }
+        }
+        if(aux_primo == 1)
+            {
+                printf("%d\n", i);
+            }
+        aux_primo = 0;
+    }
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 3 */
+#include <stdio.h>
+int main()//Função principal
+{
+    //Declaração de variaveis
+    int m = 0, n = 0, j = 0, i = 1;
+    //Pede informação para o usuario
+    printf("Digite o valor que deseja elevar e sua potencia:");
+    //Recebe os valores para as variaveis
+    scanf("%d%d", &m, &n);
+    j = m;
+    //condição para efetuar o calculo
+    while(n != i)
+    {
+        m*=j;
+        i++;
+    }
+    //Imprime na tela o resultado
+    printf("Resultado: %d", m);
+    //Me retorna se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 4 */
+#include <stdio.h>
+int main()
+{
+    //Declarando variaveis
+    int a_n, a, N, i, r;
+    //Pedindo informação para o usuario
+    printf("Digite o primeiro valor e qual razao deseja sua PA:");
+    //Recebendo informação do usuario
+    scanf("%d%d", &a, &r);
+    //Pedindo informação para o usuario
+    printf("Quantos termos deseja saber da sua PA?");
+    //Recebendo informação do usuario
+    scanf("%d", &N);
+    //Imprimindo na tela o resultado da PA
+    printf("Sua PA eh: ");
+    //Condição para construção da PA e imrpessao na tela
+    for(i = 1; i <= N; i++)
+    {
+        a_n = a + (i - 1)*r;
+        printf("%d ", a_n);
+    }
+    //Me retorna se deu tudo certo
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 5 */
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    //Declarando variaveis
+    int a_n, a, N, i, r;
+    //Pedindo informação para o usuario
+    printf("Digite o primeiro valor e qual razao deseja sua PG:");
+    //Recebendo informação do usuario
+    scanf("%d%d", &a, &r);
+    //Pedindo informação para o usuario
+    printf("Quantos termos deseja saber da sua PG?");
+    //Recebendo informação do usuario
+    scanf("%d", &N);
+    //Imprimindo na tela o resultado da PA
+    printf("Sua PA eh: ");
+    //Condição para construção da PG e imrpessao na tela
+    for(i = 1; i <= N; i++)
+    {
+        a_n = a*pow(r, i - 1);
+        printf("%d ", a_n);
+    }
+    //Me retorna se deu tudo certo
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 6 */
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    //Definindo variaveis
+    int l_inf, l_sup, aux, i;
+    //Pede informação para o usuario
+    printf("Digite o intervalo que deseja para descobrir os valores multiplos de 3 naturais:");
+    //Recebe informação do usuario
+    scanf("%d%d", &l_inf, &l_sup);
+    //Condição para verificar se a variavei limite inferior recebeu um valor maior que a variavel limite superior
+    if(l_inf > l_sup)
+    {
+        aux=l_sup;
+        l_sup = l_inf;
+        l_inf = aux;
+        printf("Vc digitou na ordem errada usuario, mas ja arrumei");
+    }
+    //Condição para verfiicar os multiplos de 3
+    for(i = l_inf; i <= l_sup; i++)
+    {
+        if(i % 3 == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+    //Me mostra se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 7 */
+#include <stdio.h>
+int main()
+{
+    //Definindo variaveis
+    int num, i;
+    //Pedindo informação para o usuario
+    printf("Digite um valor e descubra seus multiplos: ");
+    //Recebendo valores para a variavel
+    scanf("%d", &num);
+    //Condição para descobrir os multiplos
+    for(i = 1; i <= num; i++)
+    {
+        if(num % i == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+    //Me retorna se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 8 */
+#include <stdio.h>
+int main()
+{
+    //Declarando variaveis
+    int a1 = 1, a2 = 1, i, soma;
+    //Mostra pro usuario oq vou fazer
+    printf("Sequencia fibonacci de 50 termos:")
+    //Condição para fazer a sequencia Fibonacci
+    for(i = 0; i < 20; i++)
+    {
+        soma = a1 + a2;
+        printf("%d ", soma);
+        a1 = a2;
+        a2 = soma;
+    }
+    //Me mostra se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 9 */
+#include <stdio.h>
+int main()
+{
+    //Declarando variaveis
+    int num, i;
+    //Pede informação para o usuario
+    printf("Digite um valor que deseja a fatoracao:");
+    //Recebe valor para variavel
+    scanf("%d", &num);
+    //Laço de repetição for para percorrer todos os numeros até chegar no valor digitado
+    for(i = 2; i <= num; i++)
+    {
+        //Laço de repetição while para continuar verificando
+        while(num%i == 0)
+        {
+            printf("%d ", i);
+            num /= i;
+        }
+    }
+    //Me mostra se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 17/09/2019
+* Descrição do código: Exercicio 10 */
+#include <stdio.h>
+#define TAM 10
+int main()
+{
+    //Declarando variaveis
+    int val[TAM], i, j, maior = 0;
+    //laço de repetição para percorrer o vetor
+    for(i = 0; i < TAM; i++)
+    {
+        scanf("%d", &val[i]);
+        if(val[i] > maior)//condição para verificar o maior valor, se ele for maior ele salva na variavel o novo valor
+        {
+            maior = val[i];
+        }
+    }
+    //imprime na tela o maior valor
+    printf("Maior valor: %d", maior);
+    //Me mostra se deu algum erro
+    return 0;
+}
+

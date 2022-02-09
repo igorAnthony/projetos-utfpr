@@ -1,0 +1,453 @@
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 1 */
+#include <stdio.h>
+int main()//Função Principal
+{
+    int c = 0;
+    char resposta, i = 0, aux = 0;
+    printf("Eh um mamifero:");//Imprime na tela
+    resposta = getchar();//Recebe o caracter para variavel
+    if(resposta == 's')//Verifica se um um mamifero, se não for executa o else if
+    {
+        printf("Eh um guadrupede:");
+        while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+        resposta = getchar();//Recebe o caracter para variavel
+        if(resposta == 's')//Se sim, existem duas possibilidades, ele ser carnivoro ou herbivoro
+        {
+            printf("Eh carnivoro:");//Imprime na tela
+            while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+            resposta = getchar();//Recebe o caracter para variavel
+            if(resposta == 's')//Se for um carnivoro, ent eh um leao, se não é um cavalo
+            {
+                printf("Eh um leao!");//Imprime na tela
+            }else{
+                printf("Eh um cavalo!");//Imprime na tela
+            }
+        }
+        else if(resposta == 'n')//Se ele não for um guadrupede, existem ainda 3 possibilidades
+        {
+            printf("Ele eh bipede:");//Imprime na tela
+            while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+            resposta = getchar();//Recebe o caracter para variavel
+            if(resposta == 's')//Se ele for bipede, existe ainda duas possibilidades, ele ser onivoro ou frutifero
+            {
+                printf("Ele eh onivoro:");
+                while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+                resposta = getchar();//Recebe o caracter para variavel
+                if(resposta == 's')//Se ele for onivoro, ent eh um homem, se nao eh um macaco
+                {
+                    printf("Eh um homem!");//Imprime na tela
+                }else{
+                    printf("Eh um macaco!");//Imprime na tela
+                }
+            }
+            else if(resposta == 'n')//Se nao for ainda existe apenas duas possibilidades
+            {
+                printf("Ele eh voador:");
+                while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+                resposta = getchar();//Recebe o caracter para variavel
+                if(resposta == 's')//Se sim for um voador, ent eh um morcego, se não é uma baleia
+                {
+                    printf("Eh um morcego!");//Imprime na tela
+                }else{
+                    printf("Eh uma baleia!");//Imprime na tela
+                }
+            }
+        }
+    }
+    else if(resposta == 'n')
+    {
+        printf("Eh uma ave:");//Imprime na tela
+        while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+        resposta = getchar();//Recebe o caracter para variavel
+        if(resposta == 's')//Verifica se eh uma ave, se for executa esse if, se não executa o else if
+        {
+            printf("Eh nao voadora:");//Se ela for do tipo nao voadora ainda existem duas possibilidades, ser tropical ou polar
+            while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+            resposta = getchar();//Recebe o caracter para variavel
+            if(resposta == 's')
+            {
+                printf("Eh tropical:");
+                while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+                resposta = getchar();//Recebe o caracter para variavel
+                if(resposta == 's')//Se for tropical, ent é um avestruz, se não ele é um pinguim
+                {
+                    printf("Eh um avestruz!");//Imprime na tela
+                }else{
+                    printf("Eh um pinguim!");//Imprime na tela
+                }
+            }
+            else if(resposta == 'n')//Se ela for voadora, existem duas possibilidades, ela ser do tipo nadadora ou de rapina
+            {
+                printf("Eh nadadora:");//Imprime na tela
+                while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+                resposta = getchar();//Recebe o caracter para variavel
+                if(resposta == 's')//Se ela for nadadora, ent imprime que é um pinguim, se não é ent é uma águia
+                {
+                    printf("Eh um pato!");//Imprime na tela
+                }else{
+                    printf("Eh uma águia!");//Imprime na tela
+                }
+            }
+        }
+        else if(resposta == 'n')//Se executou essa linha significa que é um reptil
+        {
+            printf("Com casco:");//Imprime na tela
+            while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+            resposta = getchar();//Recebe o caracter para variavel
+            if(resposta == 's')//Verifica se ele tem caso, se sim ele é uma tartaruga
+            {
+                printf("Eh uma tartaruga!");//Imprime na tela
+            }
+            else if(resposta == 'n')//Agora tem duas possibilidades, se for carnivoro é um crocodilo, se não uma cobra
+            {
+                printf("Eh carnivoro:");//Imprime na tela
+                while((c = getchar()) != '\n'&& c != EOF);//Captura o enter do teclado
+                resposta = getchar();//Recebe o caracter para variavel
+                if(resposta == 's')//Se for carnivoro imprime que é um crocodilo, se não imprime que é cobra
+                {
+                    printf("Eh um crocodilo!");//Imprime na tela
+                }else{
+                    printf("Eh uma cobra!");
+                }
+            }
+        }
+    }
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 2 */
+#include <stdio.h>
+#include <stdlib.h>
+int main()//Função Principal
+{
+    int animal;
+    printf("O animal eh um:\n1 - mamifero\n2 - aves\n3 - reptil\n");//Imprime um menu para o usuario
+    scanf("%d", &animal);//Recebe o inteiro para variavel
+    system("cls");//Limpa a tela
+    //Condicional switch para menu de casos
+    switch(animal)
+    {
+    case 1://Se ele digitar 1, ent ele eh um mamifero, mas ainda tenho 4 possibilidades de tipo
+        printf("O mamifero eh do tipo:\n1 - quadrupede\n2 - bipede\n3 - voador\n4 - aquatico\n");//Imprime um menu para o usuario
+        scanf("%d", &animal);//Imprime na tela o animal
+        system("cls");//Limpa a tela
+        if(animal == 1)//Se ele for um guadrupede, ainda tenho 2 possibilidades
+        {
+            printf("O mamifero quadrupede eh:\n1 - carnivoro\n2 - herbivoro\n");//Imprime um menu para o usuario
+            scanf("%d", &animal);//Recebe valor digitado pelo menu
+            system("cls");//Limpa a tela
+            if(animal == 1)
+            {
+                printf("O animal eh um leao!");//Imprime na tela o animal
+            }else{
+                printf("O animal eh um cavalo!");//Imprime na tela o animal
+            }
+        }
+        else if(animal == 2)
+        {
+            printf("Seu mamifero bipede se alimenta:\n1 - onivoro\n2 - frutifero\n");//Imprime um menu para o usuario
+            scanf("%d", &animal);//Recebe valor digitado pelo menu
+            system("cls");//Limpa a tela
+            if(animal == 1)
+            {
+                printf("O animal eh um homem!");//Imprime na tela o animal
+            }else{
+                printf("O animal eh um macaco!");//Imprime na tela o animal
+            }
+        }
+        else if(animal == 3)
+        {
+            printf("O animal eh um morcego!");//Imprime na tela o animal
+        }
+        else if(animal == 4)
+        {
+            printf("O animal eh uma baleia");//Imprime na tela o animal
+        }
+        break;
+    case 2:
+        printf("A ave eh do tipo:\n1 - nao-voadora\n2 - nadadora\n3 - de rapina\n");
+        scanf("%d", &animal);//Recebe valor digitado pelo menu
+        system("cls");//Limpa a tela
+        if(animal == 1)
+        {
+            printf("A ave nao-voadora eh do clima:\n1 - tropical\n2 - polar\n");
+            scanf("%d", &animal);//Recebe valor digitado pelo menu
+            system("cls");//Limpa a tela
+            if(animal == 1)
+            {
+                printf("O animal eh um avestruz!");//Imprime na tela o animal
+            }else{
+                printf("O animal eh um pinguim!");//Imprime na tela o animal
+            }
+        }
+        else if(animal == 2)
+        {
+            printf("O animal eh um pato!");//Imprime na tela o animal
+        }
+        else if(animal == 3)
+        {
+            printf("O animal eh uma aguia!");//Imprime na tela o animal
+        }
+        break;
+    case 3://Se ele for um reptil, ainda existem 3 possibildiades
+        printf("O reptil eh do tipo:\n1 - com casco\n2 - carnivoro\n3 - sem patas\n");//Imprime um menu para o usuario
+        scanf("%d", &animal);//Recebe valor digitado pelo menu
+        system("cls");//Limpa a tela
+        if(animal == 1)
+        {
+            printf("O animal eh uma tartaruga!");//Imprime na tela o animal
+        }
+        else if(animal == 2)
+        {
+            printf("O animal eh um crocodilo!");//Imprime na tela o animal
+        }
+        else if(animal == 3)
+        {
+            printf("O animal eh uma cobra!");//Imprime na tela o animal
+        }
+        break;
+    }
+}
+
+
+
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 10/01/2019
+* Descrição do código: Exercicio 3 */
+#include <stdio.h>
+int main()//Função Principaçl
+{
+    //Definindo variaveis
+    char carac, carac2;
+    int i = 0, c = 0;
+    //Pedindo informação para o usuario
+    printf("Informe dois caracteres para servir como intervalo e descobrir os caracteres que estao entre eles: ");
+    //Recebendo valor para o primeiro intervalo
+    carac = getchar();
+    //Limpa o enter do teclado
+    while((c = getchar()) != '\n'&& c != EOF);
+    //Recebe valor para o outro intervalo
+    carac2 = getchar();
+    //Laço de repetição para percorrer o intervalo
+    for(i = carac + 1; i < carac2; i++)
+    {
+        printf("%c ", i);//Imprime os valores dentro do intervalo
+    }
+    //Me mostra se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 4 */
+#include <stdio.h>
+int main()//Função Principaçl
+{
+    //Definindo variaveis
+    int dia, mes, ano;
+    //Pedindo informação para o usuario
+    printf("Dia: ");
+    //Recebendo valor para variavei
+    scanf("%d", &dia);
+    //Pedindo informação para o usuario
+    printf("Mes: ");
+    //Recebendo valor para variavei
+    scanf("%d", &mes);
+    //Pedindo informação para o usuario
+    printf("Ano: ");
+    //Recebendo valor para variavei
+    scanf("%d", &ano);
+    //Estrutura switch para verificar o mes e imprimir em forma extenso
+    switch(mes)
+    {
+    case 1:
+        {
+            printf("%d de Janeiro de %d", dia, ano);
+            break;
+        }
+    case 2:
+        {
+            printf("%d de Fevereiro de %d", dia, ano);
+            break;
+        }
+    case 3:
+        {
+            printf("%d de Março de %d", dia, ano);
+            break;
+        }
+    case 4:
+        {
+            printf("%d de Abril de %d", dia, ano);
+            break;
+        }
+    case 5:
+        {
+            printf("%d de Maio de %d", dia, ano);
+            break;
+        }
+    case 6:
+        {
+            printf("%d de Junho de %d", dia, ano);
+            break;
+        }
+    case 7:
+        {
+            printf("%d de Julho de %d", dia, ano);
+            break;
+        }
+    case 8:
+        {
+            printf("%d de Agosto de %d", dia, ano);
+            break;
+        }
+    case 9:
+        {
+            printf("%d de Setembro de %d", dia, ano);
+            break;
+        }
+    case 10:
+        {
+            printf("%d de Outubro de %d", dia, ano);
+            break;
+        }
+    case 11:
+        {
+            printf("%d de Novembro de %d", dia, ano);
+            break;
+        }
+    case 12:
+        {
+            printf("%d de Dezembro de %d", dia, ano);
+            break;
+        }
+    default:
+        {
+            printf("Opcao de meses invalido!");
+            break;
+        }
+    }
+    //Me mostra se deu algum erro
+    return 0;
+}
+
+/* FUNDAMENTO DE PROGRAMAÇÃO
+* Programador: Igor Anthony de Lara
+* Data: 01/10/2019
+* Descrição do código: Exercicio 5 */
+#include <stdio.h>
+int main()//Função Principaçl
+{
+    //Definindo variaveis
+    int dia, mes, ano, aux = 0;
+    //Pedindo informação para o usuario
+    printf("Dia: ");
+    //Recebendo valor para variavei
+    scanf("%d", &dia);
+    //Pedindo informação para o usuario
+    printf("Mes: ");
+    //Recebendo valor para variavei
+    scanf("%d", &mes);
+    //Pedindo informação para o usuario
+    printf("Ano: ");
+    //Recebendo valor para variavei
+    scanf("%d", &ano);
+    //Condição while para ficar repetindo ate o usuario digitar o valor correto
+    while(aux == 0)
+    {
+        if(mes == 2)
+        {
+            if(ano % 4 != 0)
+            {
+                if(dia <= 28)
+                {
+                    aux = -1;
+                    break;
+                }else{
+                    aux = 0;
+                    printf("Dia invalido!! Ano nao bissexto so tem 28 dias, digite novamente: ");
+                    scanf("%d", &dia);
+                }
+            }
+
+        }
+    }
+    //Estrutura switch para imprimir em forma extenso
+    switch(mes)
+    {
+    case 1:
+        {
+            printf("%d de Janeiro de %d", dia, ano);
+            break;
+        }
+    case 2:
+        {
+            printf("%d de Fevereiro de %d", dia, ano);
+            break;
+        }
+    case 3:
+        {
+            printf("%d de Março de %d", dia, ano);
+            break;
+        }
+    case 4:
+        {
+            printf("%d de Abril de %d", dia, ano);
+            break;
+        }
+    case 5:
+        {
+            printf("%d de Maio de %d", dia, ano);
+            break;
+        }
+    case 6:
+        {
+            printf("%d de Junho de %d", dia, ano);
+            break;
+        }
+    case 7:
+        {
+            printf("%d de Julho de %d", dia, ano);
+            break;
+        }
+    case 8:
+        {
+            printf("%d de Agosto de %d", dia, ano);
+            break;
+        }
+    case 9:
+        {
+            printf("%d de Setembro de %d", dia, ano);
+            break;
+        }
+    case 10:
+        {
+            printf("%d de Outubro de %d", dia, ano);
+            break;
+        }
+    case 11:
+        {
+            printf("%d de Novembro de %d", dia, ano);
+            break;
+        }
+    case 12:
+        {
+            printf("%d de Dezembro de %d", dia, ano);
+            break;
+        }
+    default:
+        {
+            printf("Opcao de meses invalido!");
+            break;
+        }
+    }
+    //Me mostra se deu algum erro
+    return 0;
+}
